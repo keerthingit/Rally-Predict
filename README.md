@@ -57,8 +57,6 @@ from the logistic regression model.
 
 - Limited to 11 matches (~400 data points)
 - Data quality issues required removing rallies with missing or mismatched data
-- Shuttle position uses a mean value as a stand-in since it is the result of 
-  the shot, not an input
 - Model accuracy will improve as larger computer-vision badminton datasets 
   become available
 
