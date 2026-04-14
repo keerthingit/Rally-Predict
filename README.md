@@ -37,7 +37,6 @@ from the logistic regression model.
 
 - **Shot type** and **shuttle position relative to player/opponent** were the 
   strongest predictors of rally outcome
-- **Fronthand shots** scored points 50% of the time vs 15% for backhand shots
 - The final model retained: `shot_type`, `chou_shuttle_paral`, `opponent`, 
   and `rally_length`
 
@@ -47,7 +46,7 @@ from the logistic regression model.
 ---
 ## Data
 
-- **Dataset:** [ShuttleSet](https://github.com/wywyWang/CoachAI-Projects/tree/main/ShuttleSet) — 
+- **Dataset:** [ShuttleSet](https://github.com/wywyWang/CoachAI-Projects/tree/main/ShuttleSet)
   human-annotated stroke-by-stroke badminton match data
 - **Scope:** 11 men's singles matches played by Chou Tien-Chen between 2018–2019
 - **Final dataset:** ~400 final rally shot data points
