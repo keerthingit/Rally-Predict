@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>6&nbsp; Visualize – STAT468 Final Project Report</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -73,10 +76,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e8de9bd59ba156b9e4cb33cd6f01d621.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -229,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>
@@ -247,9 +250,9 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>
@@ -262,7 +265,7 @@ Attaching package: 'lubridate'</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats) </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats) </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>matches_metadata <span class="ot">&lt;-</span> </span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"../cleaned data/matches_metadata.csv"</span>, </span>
@@ -276,13 +279,13 @@ Attaching package: 'lubridate'</code></pre>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) </span>
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>rally_data <span class="ot">&lt;-</span> </span>
 <span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"../cleaned data/rally_data.csv"</span>,</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>                  <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>                  <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>table_1 <span class="ot">&lt;-</span> set_data <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>table_1 <span class="ot">&lt;-</span> set_data <span class="sc">|&gt;</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(matches_metadata <span class="sc">|&gt;</span> </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>              <span class="fu">select</span>(match_id, tournament, round, year, </span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                     winner, loser), <span class="at">by =</span> <span class="st">"match_id"</span>) <span class="sc">|&gt;</span></span>
@@ -357,26 +360,26 @@ Attaching package: 'lubridate'</code></pre>
 <span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a><span class="st">    </span></span>
 <span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a><span class="st">    Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate sets lost by him."</span>)</span>
 <span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">|&gt;</span> </span>
-<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">'gray'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">'gray'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="dwxdwsbsye" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dwxdwsbsye table {
+<div id="wxjrnwrjsv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wxjrnwrjsv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dwxdwsbsye thead, #dwxdwsbsye tbody, #dwxdwsbsye tfoot, #dwxdwsbsye tr, #dwxdwsbsye td, #dwxdwsbsye th {
+#wxjrnwrjsv thead, #wxjrnwrjsv tbody, #wxjrnwrjsv tfoot, #wxjrnwrjsv tr, #wxjrnwrjsv td, #wxjrnwrjsv th {
   border-style: none;
 }
 
-#dwxdwsbsye p {
+#wxjrnwrjsv p {
   margin: 0;
   padding: 0;
 }
 
-#dwxdwsbsye .gt_table {
+#wxjrnwrjsv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -402,12 +405,12 @@ Attaching package: 'lubridate'</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#dwxdwsbsye .gt_caption {
+#wxjrnwrjsv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dwxdwsbsye .gt_title {
+#wxjrnwrjsv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -419,7 +422,7 @@ Attaching package: 'lubridate'</code></pre>
   border-bottom-width: 0;
 }
 
-#dwxdwsbsye .gt_subtitle {
+#wxjrnwrjsv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -431,7 +434,7 @@ Attaching package: 'lubridate'</code></pre>
   border-top-width: 0;
 }
 
-#dwxdwsbsye .gt_heading {
+#wxjrnwrjsv .gt_heading {
   background-color: #F9F9F9;
   text-align: center;
   border-bottom-color: #F9F9F9;
@@ -443,13 +446,13 @@ Attaching package: 'lubridate'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dwxdwsbsye .gt_bottom_border {
+#wxjrnwrjsv .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#dwxdwsbsye .gt_col_headings {
+#wxjrnwrjsv .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -464,7 +467,7 @@ Attaching package: 'lubridate'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dwxdwsbsye .gt_col_heading {
+#wxjrnwrjsv .gt_col_heading {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -484,7 +487,7 @@ Attaching package: 'lubridate'</code></pre>
   overflow-x: hidden;
 }
 
-#dwxdwsbsye .gt_column_spanner_outer {
+#wxjrnwrjsv .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -496,15 +499,15 @@ Attaching package: 'lubridate'</code></pre>
   padding-right: 4px;
 }
 
-#dwxdwsbsye .gt_column_spanner_outer:first-child {
+#wxjrnwrjsv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dwxdwsbsye .gt_column_spanner_outer:last-child {
+#wxjrnwrjsv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dwxdwsbsye .gt_column_spanner {
+#wxjrnwrjsv .gt_column_spanner {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -516,11 +519,11 @@ Attaching package: 'lubridate'</code></pre>
   width: 100%;
 }
 
-#dwxdwsbsye .gt_spanner_row {
+#wxjrnwrjsv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dwxdwsbsye .gt_group_heading {
+#wxjrnwrjsv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -546,7 +549,7 @@ Attaching package: 'lubridate'</code></pre>
   text-align: left;
 }
 
-#dwxdwsbsye .gt_empty_group_heading {
+#wxjrnwrjsv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #F9F9F9;
@@ -561,15 +564,15 @@ Attaching package: 'lubridate'</code></pre>
   vertical-align: middle;
 }
 
-#dwxdwsbsye .gt_from_md > :first-child {
+#wxjrnwrjsv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dwxdwsbsye .gt_from_md > :last-child {
+#wxjrnwrjsv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dwxdwsbsye .gt_row {
+#wxjrnwrjsv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -588,7 +591,7 @@ Attaching package: 'lubridate'</code></pre>
   overflow-x: hidden;
 }
 
-#dwxdwsbsye .gt_stub {
+#wxjrnwrjsv .gt_stub {
   color: #333333;
   background-color: #D5D5D5;
   font-size: 100%;
@@ -601,7 +604,7 @@ Attaching package: 'lubridate'</code></pre>
   padding-right: 5px;
 }
 
-#dwxdwsbsye .gt_stub_row_group {
+#wxjrnwrjsv .gt_stub_row_group {
   color: #333333;
   background-color: #F9F9F9;
   font-size: 100%;
@@ -615,15 +618,15 @@ Attaching package: 'lubridate'</code></pre>
   vertical-align: top;
 }
 
-#dwxdwsbsye .gt_row_group_first td {
+#wxjrnwrjsv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dwxdwsbsye .gt_row_group_first th {
+#wxjrnwrjsv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dwxdwsbsye .gt_summary_row {
+#wxjrnwrjsv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -633,16 +636,16 @@ Attaching package: 'lubridate'</code></pre>
   padding-right: 5px;
 }
 
-#dwxdwsbsye .gt_first_summary_row {
+#wxjrnwrjsv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#dwxdwsbsye .gt_first_summary_row.thick {
+#wxjrnwrjsv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dwxdwsbsye .gt_last_summary_row {
+#wxjrnwrjsv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -652,7 +655,7 @@ Attaching package: 'lubridate'</code></pre>
   border-bottom-color: #5F5F5F;
 }
 
-#dwxdwsbsye .gt_grand_summary_row {
+#wxjrnwrjsv .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -662,7 +665,7 @@ Attaching package: 'lubridate'</code></pre>
   padding-right: 5px;
 }
 
-#dwxdwsbsye .gt_first_grand_summary_row {
+#wxjrnwrjsv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -672,7 +675,7 @@ Attaching package: 'lubridate'</code></pre>
   border-top-color: #5F5F5F;
 }
 
-#dwxdwsbsye .gt_last_grand_summary_row_top {
+#wxjrnwrjsv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -682,11 +685,11 @@ Attaching package: 'lubridate'</code></pre>
   border-bottom-color: #5F5F5F;
 }
 
-#dwxdwsbsye .gt_striped {
+#wxjrnwrjsv .gt_striped {
   background-color: #F4F4F4;
 }
 
-#dwxdwsbsye .gt_table_body {
+#wxjrnwrjsv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -695,7 +698,7 @@ Attaching package: 'lubridate'</code></pre>
   border-bottom-color: #5F5F5F;
 }
 
-#dwxdwsbsye .gt_footnotes {
+#wxjrnwrjsv .gt_footnotes {
   color: #333333;
   background-color: #F9F9F9;
   border-bottom-style: none;
@@ -709,7 +712,7 @@ Attaching package: 'lubridate'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dwxdwsbsye .gt_footnote {
+#wxjrnwrjsv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -718,7 +721,7 @@ Attaching package: 'lubridate'</code></pre>
   padding-right: 5px;
 }
 
-#dwxdwsbsye .gt_sourcenotes {
+#wxjrnwrjsv .gt_sourcenotes {
   color: #333333;
   background-color: #F9F9F9;
   border-bottom-style: none;
@@ -732,7 +735,7 @@ Attaching package: 'lubridate'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#dwxdwsbsye .gt_sourcenote {
+#wxjrnwrjsv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -740,77 +743,77 @@ Attaching package: 'lubridate'</code></pre>
   padding-right: 5px;
 }
 
-#dwxdwsbsye .gt_left {
+#wxjrnwrjsv .gt_left {
   text-align: left;
 }
 
-#dwxdwsbsye .gt_center {
+#wxjrnwrjsv .gt_center {
   text-align: center;
 }
 
-#dwxdwsbsye .gt_right {
+#wxjrnwrjsv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dwxdwsbsye .gt_font_normal {
+#wxjrnwrjsv .gt_font_normal {
   font-weight: normal;
 }
 
-#dwxdwsbsye .gt_font_bold {
+#wxjrnwrjsv .gt_font_bold {
   font-weight: bold;
 }
 
-#dwxdwsbsye .gt_font_italic {
+#wxjrnwrjsv .gt_font_italic {
   font-style: italic;
 }
 
-#dwxdwsbsye .gt_super {
+#wxjrnwrjsv .gt_super {
   font-size: 65%;
 }
 
-#dwxdwsbsye .gt_footnote_marks {
+#wxjrnwrjsv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dwxdwsbsye .gt_asterisk {
+#wxjrnwrjsv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dwxdwsbsye .gt_indent_1 {
+#wxjrnwrjsv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dwxdwsbsye .gt_indent_2 {
+#wxjrnwrjsv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dwxdwsbsye .gt_indent_3 {
+#wxjrnwrjsv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dwxdwsbsye .gt_indent_4 {
+#wxjrnwrjsv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dwxdwsbsye .gt_indent_5 {
+#wxjrnwrjsv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dwxdwsbsye .katex-display {
+#wxjrnwrjsv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dwxdwsbsye div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wxjrnwrjsv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -827,7 +830,7 @@ Attaching package: 'lubridate'</code></pre>
 </thead>
 <tbody class="gt_table_body">
 <tr class="gt_group_heading_row odd">
-<td colspan="4" id="Fuzhou Open / Finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Fuzhou Open / Finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen</td>
+<th colspan="4" id="Fuzhou Open / Finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Fuzhou Open / Finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="Fuzhou Open / Finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen  set_label" style="text-indent: 20px">Set 1</td>
@@ -848,7 +851,7 @@ Attaching package: 'lubridate'</code></pre>
 <td class="gt_row gt_left" headers="Fuzhou Open / Finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen  set_score">21 - 16 (5)</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="4" id="Denmark Open / Finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Denmark Open / Finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen</td>
+<th colspan="4" id="Denmark Open / Finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Denmark Open / Finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left gt_striped" headers="Denmark Open / Finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen  set_label" style="text-indent: 20px">Set 1</td>
@@ -869,7 +872,7 @@ Attaching package: 'lubridate'</code></pre>
 <td class="gt_row gt_left gt_striped" headers="Denmark Open / Finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen  set_score">21 - 15 (6)</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="4" id="Malaysia Open / Quarter-finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Malaysia Open / Quarter-finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen</td>
+<th colspan="4" id="Malaysia Open / Quarter-finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Malaysia Open / Quarter-finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left" headers="Malaysia Open / Quarter-finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen  set_label" style="text-indent: 20px">Set 1</td>
@@ -884,7 +887,7 @@ Attaching package: 'lubridate'</code></pre>
 <td class="gt_row gt_left gt_striped" headers="Malaysia Open / Quarter-finals / 2018 / Kento MOMOTA* vs CHOU Tien Chen  set_score">11 - 19 (8)</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="4" id="Fuzhou Open / Finals / 2019 / Kento MOMOTA* vs CHOU Tien Chen" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Fuzhou Open / Finals / 2019 / Kento MOMOTA* vs CHOU Tien Chen</td>
+<th colspan="4" id="Fuzhou Open / Finals / 2019 / Kento MOMOTA* vs CHOU Tien Chen" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Fuzhou Open / Finals / 2019 / Kento MOMOTA* vs CHOU Tien Chen</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left" headers="Fuzhou Open / Finals / 2019 / Kento MOMOTA* vs CHOU Tien Chen  set_label" style="text-indent: 20px">Set 1</td>
@@ -905,7 +908,7 @@ Attaching package: 'lubridate'</code></pre>
 <td class="gt_row gt_left" headers="Fuzhou Open / Finals / 2019 / Kento MOMOTA* vs CHOU Tien Chen  set_score">21 - 18 (3)</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="4" id="World Tour Finals / Group-Stage / 2019 / CHEN Long* vs CHOU Tien Chen" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">World Tour Finals / Group-Stage / 2019 / CHEN Long* vs CHOU Tien Chen</td>
+<th colspan="4" id="World Tour Finals / Group-Stage / 2019 / CHEN Long* vs CHOU Tien Chen" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">World Tour Finals / Group-Stage / 2019 / CHEN Long* vs CHOU Tien Chen</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left gt_striped" headers="World Tour Finals / Group-Stage / 2019 / CHEN Long* vs CHOU Tien Chen  set_label" style="text-indent: 20px">Set 1</td>
@@ -920,7 +923,7 @@ Attaching package: 'lubridate'</code></pre>
 <td class="gt_row gt_left" headers="World Tour Finals / Group-Stage / 2019 / CHEN Long* vs CHOU Tien Chen  set_score">21 - 19 (2)</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="4" id="KOREA OPEN / Finals / 2019 / Kento MOMOTA* vs CHOU Tien Chen" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">KOREA OPEN / Finals / 2019 / Kento MOMOTA* vs CHOU Tien Chen</td>
+<th colspan="4" id="KOREA OPEN / Finals / 2019 / Kento MOMOTA* vs CHOU Tien Chen" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">KOREA OPEN / Finals / 2019 / Kento MOMOTA* vs CHOU Tien Chen</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left gt_striped" headers="KOREA OPEN / Finals / 2019 / Kento MOMOTA* vs CHOU Tien Chen  set_label" style="text-indent: 20px">Set 1</td>
@@ -935,7 +938,7 @@ Attaching package: 'lubridate'</code></pre>
 <td class="gt_row gt_left" headers="KOREA OPEN / Finals / 2019 / Kento MOMOTA* vs CHOU Tien Chen  set_score">21 - 17 (4)</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="4" id="Denmark Open / Quarter-finals / 2019 / CHEN Long* vs CHOU Tien Chen" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Denmark Open / Quarter-finals / 2019 / CHEN Long* vs CHOU Tien Chen</td>
+<th colspan="4" id="Denmark Open / Quarter-finals / 2019 / CHEN Long* vs CHOU Tien Chen" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Denmark Open / Quarter-finals / 2019 / CHEN Long* vs CHOU Tien Chen</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left gt_striped" headers="Denmark Open / Quarter-finals / 2019 / CHEN Long* vs CHOU Tien Chen  set_label" style="text-indent: 20px">Set 1</td>
@@ -950,7 +953,7 @@ Attaching package: 'lubridate'</code></pre>
 <td class="gt_row gt_left" headers="Denmark Open / Quarter-finals / 2019 / CHEN Long* vs CHOU Tien Chen  set_score">21 - 17 (4)</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="4" id="Fuzhou Open / Semi-finals / 2019 / CHOU Tien Chen* vs Anders ANTONSEN" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Fuzhou Open / Semi-finals / 2019 / CHOU Tien Chen* vs Anders ANTONSEN</td>
+<th colspan="4" id="Fuzhou Open / Semi-finals / 2019 / CHOU Tien Chen* vs Anders ANTONSEN" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Fuzhou Open / Semi-finals / 2019 / CHOU Tien Chen* vs Anders ANTONSEN</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left gt_striped" headers="Fuzhou Open / Semi-finals / 2019 / CHOU Tien Chen* vs Anders ANTONSEN  set_label" style="text-indent: 20px">Set 1</td>
@@ -965,7 +968,7 @@ Attaching package: 'lubridate'</code></pre>
 <td class="gt_row gt_left" headers="Fuzhou Open / Semi-finals / 2019 / CHOU Tien Chen* vs Anders ANTONSEN  set_score">18 - 12 (6)</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="4" id="Sudirman Cup / Quarter-finals / 2019 / CHOU Tien Chen* vs Jonatan CHRISTIE" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Sudirman Cup / Quarter-finals / 2019 / CHOU Tien Chen* vs Jonatan CHRISTIE</td>
+<th colspan="4" id="Sudirman Cup / Quarter-finals / 2019 / CHOU Tien Chen* vs Jonatan CHRISTIE" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Sudirman Cup / Quarter-finals / 2019 / CHOU Tien Chen* vs Jonatan CHRISTIE</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left gt_striped" headers="Sudirman Cup / Quarter-finals / 2019 / CHOU Tien Chen* vs Jonatan CHRISTIE  set_label" style="text-indent: 20px">Set 1</td>
@@ -980,7 +983,7 @@ Attaching package: 'lubridate'</code></pre>
 <td class="gt_row gt_left" headers="Sudirman Cup / Quarter-finals / 2019 / CHOU Tien Chen* vs Jonatan CHRISTIE  set_score">21 - 13 (8)</td>
 </tr>
 <tr class="gt_group_heading_row odd">
-<td colspan="4" id="Sudirman Cup / Group-Stage / 2019 / CHOU Tien Chen* vs NG Ka Long Angus" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Sudirman Cup / Group-Stage / 2019 / CHOU Tien Chen* vs NG Ka Long Angus</td>
+<th colspan="4" id="Sudirman Cup / Group-Stage / 2019 / CHOU Tien Chen* vs NG Ka Long Angus" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Sudirman Cup / Group-Stage / 2019 / CHOU Tien Chen* vs NG Ka Long Angus</th>
 </tr>
 <tr class="gt_row_group_first even">
 <td class="gt_row gt_left gt_striped" headers="Sudirman Cup / Group-Stage / 2019 / CHOU Tien Chen* vs NG Ka Long Angus  set_label" style="text-indent: 20px">Set 1</td>
@@ -995,7 +998,7 @@ Attaching package: 'lubridate'</code></pre>
 <td class="gt_row gt_left" headers="Sudirman Cup / Group-Stage / 2019 / CHOU Tien Chen* vs NG Ka Long Angus  set_score">21 - 15 (6)</td>
 </tr>
 <tr class="gt_group_heading_row even">
-<td colspan="4" id="Indonesia Open / Quarter-finals / 2019 / CHOU Tien Chen* vs Jonatan CHRISTIE" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Indonesia Open / Quarter-finals / 2019 / CHOU Tien Chen* vs Jonatan CHRISTIE</td>
+<th colspan="4" id="Indonesia Open / Quarter-finals / 2019 / CHOU Tien Chen* vs Jonatan CHRISTIE" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Indonesia Open / Quarter-finals / 2019 / CHOU Tien Chen* vs Jonatan CHRISTIE</th>
 </tr>
 <tr class="gt_row_group_first odd">
 <td class="gt_row gt_left gt_striped" headers="Indonesia Open / Quarter-finals / 2019 / CHOU Tien Chen* vs Jonatan CHRISTIE  set_label" style="text-indent: 20px">Set 1</td>
@@ -1036,7 +1039,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>table_2 <span class="ot">&lt;-</span> matches_metadata <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>table_2 <span class="ot">&lt;-</span> matches_metadata <span class="sc">|&gt;</span> </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">matches_played =</span> <span class="fu">n</span>(),</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">matches_won =</span> <span class="fu">sum</span>(winner <span class="sc">==</span> <span class="st">"CHOU Tien Chen"</span>),</span>
@@ -1056,26 +1059,26 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">align =</span> <span class="st">"center"</span>),</span>
 <span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>()</span>
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">'gray'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">'gray'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="wcaqvovtjf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wcaqvovtjf table {
+<div id="auvyzsqrsx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#auvyzsqrsx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wcaqvovtjf thead, #wcaqvovtjf tbody, #wcaqvovtjf tfoot, #wcaqvovtjf tr, #wcaqvovtjf td, #wcaqvovtjf th {
+#auvyzsqrsx thead, #auvyzsqrsx tbody, #auvyzsqrsx tfoot, #auvyzsqrsx tr, #auvyzsqrsx td, #auvyzsqrsx th {
   border-style: none;
 }
 
-#wcaqvovtjf p {
+#auvyzsqrsx p {
   margin: 0;
   padding: 0;
 }
 
-#wcaqvovtjf .gt_table {
+#auvyzsqrsx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1101,12 +1104,12 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-left-color: #D3D3D3;
 }
 
-#wcaqvovtjf .gt_caption {
+#auvyzsqrsx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wcaqvovtjf .gt_title {
+#auvyzsqrsx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1118,7 +1121,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-bottom-width: 0;
 }
 
-#wcaqvovtjf .gt_subtitle {
+#auvyzsqrsx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1130,7 +1133,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-top-width: 0;
 }
 
-#wcaqvovtjf .gt_heading {
+#auvyzsqrsx .gt_heading {
   background-color: #E5E4E2;
   text-align: center;
   border-bottom-color: #E5E4E2;
@@ -1142,13 +1145,13 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-right-color: #D3D3D3;
 }
 
-#wcaqvovtjf .gt_bottom_border {
+#auvyzsqrsx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#wcaqvovtjf .gt_col_headings {
+#auvyzsqrsx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1163,7 +1166,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-right-color: #D3D3D3;
 }
 
-#wcaqvovtjf .gt_col_heading {
+#auvyzsqrsx .gt_col_heading {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -1183,7 +1186,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   overflow-x: hidden;
 }
 
-#wcaqvovtjf .gt_column_spanner_outer {
+#auvyzsqrsx .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -1195,15 +1198,15 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 4px;
 }
 
-#wcaqvovtjf .gt_column_spanner_outer:first-child {
+#auvyzsqrsx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wcaqvovtjf .gt_column_spanner_outer:last-child {
+#auvyzsqrsx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wcaqvovtjf .gt_column_spanner {
+#auvyzsqrsx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -1215,11 +1218,11 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   width: 100%;
 }
 
-#wcaqvovtjf .gt_spanner_row {
+#auvyzsqrsx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wcaqvovtjf .gt_group_heading {
+#auvyzsqrsx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1245,7 +1248,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   text-align: left;
 }
 
-#wcaqvovtjf .gt_empty_group_heading {
+#auvyzsqrsx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #E5E4E2;
@@ -1260,15 +1263,15 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   vertical-align: middle;
 }
 
-#wcaqvovtjf .gt_from_md > :first-child {
+#auvyzsqrsx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wcaqvovtjf .gt_from_md > :last-child {
+#auvyzsqrsx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wcaqvovtjf .gt_row {
+#auvyzsqrsx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1287,7 +1290,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   overflow-x: hidden;
 }
 
-#wcaqvovtjf .gt_stub {
+#auvyzsqrsx .gt_stub {
   color: #333333;
   background-color: #D5D5D5;
   font-size: 100%;
@@ -1300,7 +1303,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 5px;
 }
 
-#wcaqvovtjf .gt_stub_row_group {
+#auvyzsqrsx .gt_stub_row_group {
   color: #333333;
   background-color: #E5E4E2;
   font-size: 100%;
@@ -1314,15 +1317,15 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   vertical-align: top;
 }
 
-#wcaqvovtjf .gt_row_group_first td {
+#auvyzsqrsx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wcaqvovtjf .gt_row_group_first th {
+#auvyzsqrsx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wcaqvovtjf .gt_summary_row {
+#auvyzsqrsx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1332,16 +1335,16 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 5px;
 }
 
-#wcaqvovtjf .gt_first_summary_row {
+#auvyzsqrsx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#wcaqvovtjf .gt_first_summary_row.thick {
+#auvyzsqrsx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wcaqvovtjf .gt_last_summary_row {
+#auvyzsqrsx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1351,7 +1354,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-bottom-color: #5F5F5F;
 }
 
-#wcaqvovtjf .gt_grand_summary_row {
+#auvyzsqrsx .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -1361,7 +1364,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 5px;
 }
 
-#wcaqvovtjf .gt_first_grand_summary_row {
+#auvyzsqrsx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1371,7 +1374,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-top-color: #5F5F5F;
 }
 
-#wcaqvovtjf .gt_last_grand_summary_row_top {
+#auvyzsqrsx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1381,11 +1384,11 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-bottom-color: #5F5F5F;
 }
 
-#wcaqvovtjf .gt_striped {
+#auvyzsqrsx .gt_striped {
   background-color: #F4F4F4;
 }
 
-#wcaqvovtjf .gt_table_body {
+#auvyzsqrsx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1394,7 +1397,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-bottom-color: #5F5F5F;
 }
 
-#wcaqvovtjf .gt_footnotes {
+#auvyzsqrsx .gt_footnotes {
   color: #333333;
   background-color: #E5E4E2;
   border-bottom-style: none;
@@ -1408,7 +1411,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-right-color: #D3D3D3;
 }
 
-#wcaqvovtjf .gt_footnote {
+#auvyzsqrsx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1417,7 +1420,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 5px;
 }
 
-#wcaqvovtjf .gt_sourcenotes {
+#auvyzsqrsx .gt_sourcenotes {
   color: #333333;
   background-color: #E5E4E2;
   border-bottom-style: none;
@@ -1431,7 +1434,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-right-color: #D3D3D3;
 }
 
-#wcaqvovtjf .gt_sourcenote {
+#auvyzsqrsx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1439,77 +1442,77 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 5px;
 }
 
-#wcaqvovtjf .gt_left {
+#auvyzsqrsx .gt_left {
   text-align: left;
 }
 
-#wcaqvovtjf .gt_center {
+#auvyzsqrsx .gt_center {
   text-align: center;
 }
 
-#wcaqvovtjf .gt_right {
+#auvyzsqrsx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wcaqvovtjf .gt_font_normal {
+#auvyzsqrsx .gt_font_normal {
   font-weight: normal;
 }
 
-#wcaqvovtjf .gt_font_bold {
+#auvyzsqrsx .gt_font_bold {
   font-weight: bold;
 }
 
-#wcaqvovtjf .gt_font_italic {
+#auvyzsqrsx .gt_font_italic {
   font-style: italic;
 }
 
-#wcaqvovtjf .gt_super {
+#auvyzsqrsx .gt_super {
   font-size: 65%;
 }
 
-#wcaqvovtjf .gt_footnote_marks {
+#auvyzsqrsx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wcaqvovtjf .gt_asterisk {
+#auvyzsqrsx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wcaqvovtjf .gt_indent_1 {
+#auvyzsqrsx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wcaqvovtjf .gt_indent_2 {
+#auvyzsqrsx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wcaqvovtjf .gt_indent_3 {
+#auvyzsqrsx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wcaqvovtjf .gt_indent_4 {
+#auvyzsqrsx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wcaqvovtjf .gt_indent_5 {
+#auvyzsqrsx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wcaqvovtjf .katex-display {
+#auvyzsqrsx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wcaqvovtjf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#auvyzsqrsx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="matches_summary" class="gt_col_heading gt_columns_bottom_border gt_right" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Matches Won</th>
@@ -1528,7 +1531,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>rally_lengths <span class="ot">&lt;-</span> rally_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>rally_lengths <span class="ot">&lt;-</span> rally_data <span class="sc">|&gt;</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(rally_winner)) <span class="sc">|&gt;</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(match_id, set, rally) <span class="sc">|&gt;</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_tail</span>(<span class="at">n =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
@@ -1581,26 +1584,26 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">column_labels.padding =</span> <span class="fu">px</span>(<span class="dv">10</span>),</span>
 <span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>)</span>
 <span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"gray"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"gray"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="ucymmazosi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ucymmazosi table {
+<div id="ampdczsfho" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ampdczsfho table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ucymmazosi thead, #ucymmazosi tbody, #ucymmazosi tfoot, #ucymmazosi tr, #ucymmazosi td, #ucymmazosi th {
+#ampdczsfho thead, #ampdczsfho tbody, #ampdczsfho tfoot, #ampdczsfho tr, #ampdczsfho td, #ampdczsfho th {
   border-style: none;
 }
 
-#ucymmazosi p {
+#ampdczsfho p {
   margin: 0;
   padding: 0;
 }
 
-#ucymmazosi .gt_table {
+#ampdczsfho .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1626,12 +1629,12 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-left-color: #D3D3D3;
 }
 
-#ucymmazosi .gt_caption {
+#ampdczsfho .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ucymmazosi .gt_title {
+#ampdczsfho .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1643,7 +1646,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-bottom-width: 0;
 }
 
-#ucymmazosi .gt_subtitle {
+#ampdczsfho .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1655,7 +1658,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-top-width: 0;
 }
 
-#ucymmazosi .gt_heading {
+#ampdczsfho .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1667,13 +1670,13 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-right-color: #D3D3D3;
 }
 
-#ucymmazosi .gt_bottom_border {
+#ampdczsfho .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#ucymmazosi .gt_col_headings {
+#ampdczsfho .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1688,7 +1691,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-right-color: #D3D3D3;
 }
 
-#ucymmazosi .gt_col_heading {
+#ampdczsfho .gt_col_heading {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -1708,7 +1711,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   overflow-x: hidden;
 }
 
-#ucymmazosi .gt_column_spanner_outer {
+#ampdczsfho .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -1720,15 +1723,15 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 4px;
 }
 
-#ucymmazosi .gt_column_spanner_outer:first-child {
+#ampdczsfho .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ucymmazosi .gt_column_spanner_outer:last-child {
+#ampdczsfho .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ucymmazosi .gt_column_spanner {
+#ampdczsfho .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -1740,11 +1743,11 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   width: 100%;
 }
 
-#ucymmazosi .gt_spanner_row {
+#ampdczsfho .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ucymmazosi .gt_group_heading {
+#ampdczsfho .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1770,7 +1773,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   text-align: left;
 }
 
-#ucymmazosi .gt_empty_group_heading {
+#ampdczsfho .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1785,15 +1788,15 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   vertical-align: middle;
 }
 
-#ucymmazosi .gt_from_md > :first-child {
+#ampdczsfho .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ucymmazosi .gt_from_md > :last-child {
+#ampdczsfho .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ucymmazosi .gt_row {
+#ampdczsfho .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -1812,7 +1815,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   overflow-x: hidden;
 }
 
-#ucymmazosi .gt_stub {
+#ampdczsfho .gt_stub {
   color: #333333;
   background-color: #D5D5D5;
   font-size: 100%;
@@ -1825,7 +1828,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 5px;
 }
 
-#ucymmazosi .gt_stub_row_group {
+#ampdczsfho .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1839,15 +1842,15 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   vertical-align: top;
 }
 
-#ucymmazosi .gt_row_group_first td {
+#ampdczsfho .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ucymmazosi .gt_row_group_first th {
+#ampdczsfho .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ucymmazosi .gt_summary_row {
+#ampdczsfho .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1857,16 +1860,16 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 5px;
 }
 
-#ucymmazosi .gt_first_summary_row {
+#ampdczsfho .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#ucymmazosi .gt_first_summary_row.thick {
+#ampdczsfho .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ucymmazosi .gt_last_summary_row {
+#ampdczsfho .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1876,7 +1879,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-bottom-color: #5F5F5F;
 }
 
-#ucymmazosi .gt_grand_summary_row {
+#ampdczsfho .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -1886,7 +1889,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 5px;
 }
 
-#ucymmazosi .gt_first_grand_summary_row {
+#ampdczsfho .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1896,7 +1899,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-top-color: #5F5F5F;
 }
 
-#ucymmazosi .gt_last_grand_summary_row_top {
+#ampdczsfho .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1906,11 +1909,11 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-bottom-color: #5F5F5F;
 }
 
-#ucymmazosi .gt_striped {
+#ampdczsfho .gt_striped {
   background-color: #F4F4F4;
 }
 
-#ucymmazosi .gt_table_body {
+#ampdczsfho .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1919,7 +1922,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-bottom-color: #5F5F5F;
 }
 
-#ucymmazosi .gt_footnotes {
+#ampdczsfho .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1933,7 +1936,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-right-color: #D3D3D3;
 }
 
-#ucymmazosi .gt_footnote {
+#ampdczsfho .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1942,7 +1945,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 5px;
 }
 
-#ucymmazosi .gt_sourcenotes {
+#ampdczsfho .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1956,7 +1959,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-right-color: #D3D3D3;
 }
 
-#ucymmazosi .gt_sourcenote {
+#ampdczsfho .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1964,77 +1967,77 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 5px;
 }
 
-#ucymmazosi .gt_left {
+#ampdczsfho .gt_left {
   text-align: left;
 }
 
-#ucymmazosi .gt_center {
+#ampdczsfho .gt_center {
   text-align: center;
 }
 
-#ucymmazosi .gt_right {
+#ampdczsfho .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ucymmazosi .gt_font_normal {
+#ampdczsfho .gt_font_normal {
   font-weight: normal;
 }
 
-#ucymmazosi .gt_font_bold {
+#ampdczsfho .gt_font_bold {
   font-weight: bold;
 }
 
-#ucymmazosi .gt_font_italic {
+#ampdczsfho .gt_font_italic {
   font-style: italic;
 }
 
-#ucymmazosi .gt_super {
+#ampdczsfho .gt_super {
   font-size: 65%;
 }
 
-#ucymmazosi .gt_footnote_marks {
+#ampdczsfho .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ucymmazosi .gt_asterisk {
+#ampdczsfho .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ucymmazosi .gt_indent_1 {
+#ampdczsfho .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ucymmazosi .gt_indent_2 {
+#ampdczsfho .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ucymmazosi .gt_indent_3 {
+#ampdczsfho .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ucymmazosi .gt_indent_4 {
+#ampdczsfho .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ucymmazosi .gt_indent_5 {
+#ampdczsfho .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ucymmazosi .katex-display {
+#ampdczsfho .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ucymmazosi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ampdczsfho div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="count" class="gt_col_heading gt_columns_bottom_border gt_center" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">No. of rallies</th>
@@ -2065,7 +2068,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rally_lengths, <span class="fu">aes</span>(<span class="at">x =</span> rally_length)) <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rally_lengths, <span class="fu">aes</span>(<span class="at">x =</span> rally_length)) <span class="sc">+</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">"#A3D1FF"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mean_length), </span>
@@ -2082,7 +2085,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of Strokes in a Rally"</span>,</span>
 <span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Frequency"</span></span>
 <span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
@@ -2097,7 +2100,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rally_lengths, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rally_lengths, </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(rally_length, <span class="at">fill =</span> chou_result)) <span class="sc">+</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"white"</span>)  <span class="sc">+</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
@@ -2109,7 +2112,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of Strokes in a Rally"</span>,</span>
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Frequency"</span></span>
 <span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -2122,7 +2125,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>chou_shots <span class="ot">&lt;-</span> rally_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>chou_shots <span class="ot">&lt;-</span> rally_data <span class="sc">|&gt;</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(current_player <span class="sc">==</span> <span class="st">"CHOU Tien Chen"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(match_id, set, rally) <span class="sc">|&gt;</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -2150,7 +2153,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Shot Type"</span>,</span>
 <span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Number of Times Used"</span></span>
 <span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -2163,7 +2166,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>winning_shots <span class="ot">&lt;-</span> rally_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>winning_shots <span class="ot">&lt;-</span> rally_data <span class="sc">|&gt;</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(current_player <span class="sc">==</span> <span class="st">"CHOU Tien Chen"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(match_id, set, rally) <span class="sc">|&gt;</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_tail</span>(<span class="at">n =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
@@ -2180,7 +2183,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Shot Type"</span>,</span>
 <span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Rallies Won by CHOU"</span></span>
 <span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -2193,7 +2196,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>winning_shots_hand <span class="ot">&lt;-</span> rally_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>winning_shots_hand <span class="ot">&lt;-</span> rally_data <span class="sc">|&gt;</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(current_player <span class="sc">==</span> <span class="st">"CHOU Tien Chen"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(match_id, set, rally) <span class="sc">|&gt;</span></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_tail</span>(<span class="at">n =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
@@ -2213,7 +2216,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Rallies Won"</span>,</span>
 <span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Hand Used"</span></span>
 <span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -2224,7 +2227,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>rally_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>rally_data <span class="sc">|&gt;</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(current_player <span class="sc">==</span> <span class="st">"CHOU Tien Chen"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(match_id, set, rally, backhand, rally_winner) <span class="sc">|&gt;</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(match_id, set, rally) <span class="sc">|&gt;</span></span>
@@ -2260,26 +2263,26 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">column_labels.padding =</span> <span class="fu">px</span>(<span class="dv">10</span>),</span>
 <span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">100</span>)</span>
 <span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"gray"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"gray"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="wctwhklwpx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wctwhklwpx table {
+<div id="uyoizzqaph" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uyoizzqaph table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wctwhklwpx thead, #wctwhklwpx tbody, #wctwhklwpx tfoot, #wctwhklwpx tr, #wctwhklwpx td, #wctwhklwpx th {
+#uyoizzqaph thead, #uyoizzqaph tbody, #uyoizzqaph tfoot, #uyoizzqaph tr, #uyoizzqaph td, #uyoizzqaph th {
   border-style: none;
 }
 
-#wctwhklwpx p {
+#uyoizzqaph p {
   margin: 0;
   padding: 0;
 }
 
-#wctwhklwpx .gt_table {
+#uyoizzqaph .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2305,12 +2308,12 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-left-color: #D3D3D3;
 }
 
-#wctwhklwpx .gt_caption {
+#uyoizzqaph .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wctwhklwpx .gt_title {
+#uyoizzqaph .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2322,7 +2325,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-bottom-width: 0;
 }
 
-#wctwhklwpx .gt_subtitle {
+#uyoizzqaph .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2334,7 +2337,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-top-width: 0;
 }
 
-#wctwhklwpx .gt_heading {
+#uyoizzqaph .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2346,13 +2349,13 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-right-color: #D3D3D3;
 }
 
-#wctwhklwpx .gt_bottom_border {
+#uyoizzqaph .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#wctwhklwpx .gt_col_headings {
+#uyoizzqaph .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -2367,7 +2370,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-right-color: #D3D3D3;
 }
 
-#wctwhklwpx .gt_col_heading {
+#uyoizzqaph .gt_col_heading {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -2387,7 +2390,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   overflow-x: hidden;
 }
 
-#wctwhklwpx .gt_column_spanner_outer {
+#uyoizzqaph .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #5F5F5F;
   font-size: 100%;
@@ -2399,15 +2402,15 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 4px;
 }
 
-#wctwhklwpx .gt_column_spanner_outer:first-child {
+#uyoizzqaph .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wctwhklwpx .gt_column_spanner_outer:last-child {
+#uyoizzqaph .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wctwhklwpx .gt_column_spanner {
+#uyoizzqaph .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -2419,11 +2422,11 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   width: 100%;
 }
 
-#wctwhklwpx .gt_spanner_row {
+#uyoizzqaph .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wctwhklwpx .gt_group_heading {
+#uyoizzqaph .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2449,7 +2452,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   text-align: left;
 }
 
-#wctwhklwpx .gt_empty_group_heading {
+#uyoizzqaph .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2464,15 +2467,15 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   vertical-align: middle;
 }
 
-#wctwhklwpx .gt_from_md > :first-child {
+#uyoizzqaph .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wctwhklwpx .gt_from_md > :last-child {
+#uyoizzqaph .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wctwhklwpx .gt_row {
+#uyoizzqaph .gt_row {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 5px;
@@ -2491,7 +2494,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   overflow-x: hidden;
 }
 
-#wctwhklwpx .gt_stub {
+#uyoizzqaph .gt_stub {
   color: #333333;
   background-color: #D5D5D5;
   font-size: 100%;
@@ -2504,7 +2507,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 5px;
 }
 
-#wctwhklwpx .gt_stub_row_group {
+#uyoizzqaph .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2518,15 +2521,15 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   vertical-align: top;
 }
 
-#wctwhklwpx .gt_row_group_first td {
+#uyoizzqaph .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wctwhklwpx .gt_row_group_first th {
+#uyoizzqaph .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wctwhklwpx .gt_summary_row {
+#uyoizzqaph .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2536,16 +2539,16 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 5px;
 }
 
-#wctwhklwpx .gt_first_summary_row {
+#uyoizzqaph .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#wctwhklwpx .gt_first_summary_row.thick {
+#uyoizzqaph .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wctwhklwpx .gt_last_summary_row {
+#uyoizzqaph .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2555,7 +2558,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-bottom-color: #5F5F5F;
 }
 
-#wctwhklwpx .gt_grand_summary_row {
+#uyoizzqaph .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -2565,7 +2568,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 5px;
 }
 
-#wctwhklwpx .gt_first_grand_summary_row {
+#uyoizzqaph .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2575,7 +2578,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-top-color: #5F5F5F;
 }
 
-#wctwhklwpx .gt_last_grand_summary_row_top {
+#uyoizzqaph .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2585,11 +2588,11 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-bottom-color: #5F5F5F;
 }
 
-#wctwhklwpx .gt_striped {
+#uyoizzqaph .gt_striped {
   background-color: #F4F4F4;
 }
 
-#wctwhklwpx .gt_table_body {
+#uyoizzqaph .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -2598,7 +2601,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-bottom-color: #5F5F5F;
 }
 
-#wctwhklwpx .gt_footnotes {
+#uyoizzqaph .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2612,7 +2615,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-right-color: #D3D3D3;
 }
 
-#wctwhklwpx .gt_footnote {
+#uyoizzqaph .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2621,7 +2624,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 5px;
 }
 
-#wctwhklwpx .gt_sourcenotes {
+#uyoizzqaph .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2635,7 +2638,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   border-right-color: #D3D3D3;
 }
 
-#wctwhklwpx .gt_sourcenote {
+#uyoizzqaph .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2643,77 +2646,77 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
   padding-right: 5px;
 }
 
-#wctwhklwpx .gt_left {
+#uyoizzqaph .gt_left {
   text-align: left;
 }
 
-#wctwhklwpx .gt_center {
+#uyoizzqaph .gt_center {
   text-align: center;
 }
 
-#wctwhklwpx .gt_right {
+#uyoizzqaph .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wctwhklwpx .gt_font_normal {
+#uyoizzqaph .gt_font_normal {
   font-weight: normal;
 }
 
-#wctwhklwpx .gt_font_bold {
+#uyoizzqaph .gt_font_bold {
   font-weight: bold;
 }
 
-#wctwhklwpx .gt_font_italic {
+#uyoizzqaph .gt_font_italic {
   font-style: italic;
 }
 
-#wctwhklwpx .gt_super {
+#uyoizzqaph .gt_super {
   font-size: 65%;
 }
 
-#wctwhklwpx .gt_footnote_marks {
+#uyoizzqaph .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wctwhklwpx .gt_asterisk {
+#uyoizzqaph .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wctwhklwpx .gt_indent_1 {
+#uyoizzqaph .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wctwhklwpx .gt_indent_2 {
+#uyoizzqaph .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wctwhklwpx .gt_indent_3 {
+#uyoizzqaph .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wctwhklwpx .gt_indent_4 {
+#uyoizzqaph .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wctwhklwpx .gt_indent_5 {
+#uyoizzqaph .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wctwhklwpx .katex-display {
+#uyoizzqaph .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wctwhklwpx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#uyoizzqaph div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="hand" class="gt_col_heading gt_columns_bottom_border gt_center" style="text-align: center;" data-quarto-table-cell-role="th" scope="col">Hand</th>
@@ -2744,7 +2747,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>loosing_shots <span class="ot">&lt;-</span> rally_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>loosing_shots <span class="ot">&lt;-</span> rally_data <span class="sc">|&gt;</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(current_player <span class="sc">!=</span> <span class="st">"CHOU Tien Chen"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(match_id, set, rally) <span class="sc">|&gt;</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_tail</span>(<span class="at">n =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
@@ -2761,7 +2764,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Shot Type"</span>,</span>
 <span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Rallies Lost by CHOU"</span></span>
 <span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -2774,7 +2777,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>shuttle_points <span class="ot">&lt;-</span> rally_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>shuttle_points <span class="ot">&lt;-</span> rally_data <span class="sc">|&gt;</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(shuttle_x), <span class="sc">!</span><span class="fu">is.na</span>(shuttle_y))<span class="sc">|&gt;</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(shuttle_x, shuttle_y, <span class="at">name =</span> <span class="st">"freq"</span>) </span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -2825,7 +2828,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -2836,7 +2839,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>chou_shots_win <span class="ot">&lt;-</span> rally_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>chou_shots_win <span class="ot">&lt;-</span> rally_data <span class="sc">|&gt;</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(current_player <span class="sc">==</span> <span class="st">"CHOU Tien Chen"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(shuttle_x), <span class="sc">!</span><span class="fu">is.na</span>(shuttle_y), <span class="sc">!</span><span class="fu">is.na</span>(chou_y), <span class="sc">!</span><span class="fu">is.na</span>(rally_winner)) <span class="sc">|&gt;</span></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(match_id, set, rally) <span class="sc">|&gt;</span></span>
@@ -2878,7 +2881,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> (court_coordinates<span class="sc">$</span>upleft_x <span class="sc">+</span> court_coordinates<span class="sc">$</span>upright_x) <span class="sc">/</span> <span class="dv">2</span>, </span>
 <span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> court_coordinates<span class="sc">$</span>upleft_y <span class="sc">-</span> <span class="dv">30</span>, </span>
 <span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>         <span class="at">label =</span> <span class="st">"Opponent"</span>, </span>
-<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>         <span class="at">size =</span> <span class="dv">3</span>,  <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>         <span class="at">size =</span> <span class="dv">3</span>,  <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -2889,7 +2892,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for opponent's winning shots (CHOU lost the point)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for opponent's winning shots (CHOU lost the point)</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>opp_shots_win <span class="ot">&lt;-</span> rally_data <span class="sc">|&gt;</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(current_player <span class="sc">!=</span> <span class="st">"CHOU Tien Chen"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(shuttle_x), <span class="sc">!</span><span class="fu">is.na</span>(shuttle_y), <span class="sc">!</span><span class="fu">is.na</span>(opp_y), <span class="sc">!</span><span class="fu">is.na</span>(rally_winner)) <span class="sc">|&gt;</span></span>
@@ -2933,7 +2936,7 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
 <span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a>           <span class="at">x =</span> (court_coordinates<span class="sc">$</span>upleft_x <span class="sc">+</span> court_coordinates<span class="sc">$</span>upright_x) <span class="sc">/</span> <span class="dv">2</span>, </span>
 <span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> court_coordinates<span class="sc">$</span>upleft_y <span class="sc">-</span> <span class="dv">30</span>, </span>
 <span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Opponent"</span>, </span>
-<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="dv">3</span>,  <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="dv">3</span>,  <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -2998,13 +3001,14 @@ Green highlights indicate sets won by CHOU Tien Chen and red highlights indicate
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
